@@ -50,7 +50,7 @@ WEB TEMPLATE CREATED BY IRON SPIDER - http://www.ironspider.ca/
 
 
 
-COPYRIGHT © Robert Darrell 2008 - All rights reserved.
+COPYRIGHT ï¿½ Robert Darrell 2008 - All rights reserved.
 
 
 
@@ -1189,13 +1189,8 @@ Clear Mountain Zen Center<br>
 
 
 
-7 Oak Place<br>
-
-
-
-
-
-Montclair, NJ 07042
+80 Pompton Ave<br>
+Verona, NJ 07044
 
 
 
