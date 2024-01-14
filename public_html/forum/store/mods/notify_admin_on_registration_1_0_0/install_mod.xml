@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="modx.prosilver.en.xsl"?>
+<!--For security purposes, please check: http://www.phpbb.com/mods/ for the latest version of this MOD. Although MODs are checked before being allowed in the MODs Database there is no guarantee that there are no security problems within the MOD. No support will be given for MODs not found within the MODs Database which can be found at http://www.phpbb.com/mods/-->
+<mod xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.phpbb.com/mods/xml/modx-1.0.1.xsd">
+  <header>
+    <license>http://opensource.org/licenses/gpl-license.php GNU General Public License v2</license>
+    <title lang="en-gb">Notify Admin on Registration</title>
+    <description lang="en-gb">When a new user registers on your board, a short e-mail with basic user info will be sent to all administrators of the board.</description>
+    <author-group>
+      <author>
+        <realname>Vojtech Vondra</realname>
+        <email>mailbox@ameeck.net</email>
+        <username>ameeck</username>
+        <homepage>http://www.phpbb.cz</homepage>
+        <contributions />
+      </author>
+    </author-group>
+    <mod-version>
+      <major>1</major>
+      <minor>0</minor>
+      <revision>0</revision>
+    </mod-version>
+    <installation>
+      <level>easy</level>
+      <time>188</time>
+      <target-version>
+        <target-primary>3.0.0</target-primary>
+        <target-major allow="exact">3</target-major>
+        <target-minor allow="exact">0</target-minor>
+        <target-revision allow="exact">0</target-revision>
+      </target-version>
+    </installation>
+    <history>
+          <entry>
+        <date>2007-08-23T00:00:00+02:00</date>
+        <rev-version>
+          <major>1</major>
+          <minor>0</minor>
+          <revision>0</revision>
+        </rev-version>
+        <changelog lang="en-gb">
+          <change>First stable release - no changes</change>
+        </changelog>
+      </entry>
+      <entry>
+        <date>2007-08-23T00:00:00+02:00</date>
+        <rev-version>
+          <major>0</major>
+          <minor>1</minor>
+          <revision>1</revision>
+        </rev-version>
+        <changelog lang="en-gb">
+          <change>Initial release</change>
+        </changelog>
+      </entry>
+    </history>
+    <meta name="generator" content="Phpbb.ModTeam.Tools (c#)" />
+  </header>
+  <action-group>
+    <copy>
+        <file from="root/language/en/email/admin_notify_registered.txt" to="language/en/email/admin_notify_registered.txt" />
+    </copy>
+    <open src="includes/ucp/ucp_register.php">
+      <edit>
+        <find><![CDATA[				}
+
+				$message = $message . '<br /><br />' . sprintf($user->lang['RETURN_INDEX'], '<a href="' . append_sid("{$phpbb_root_path}index.$phpEx") . '">', '</a>');
+				trigger_error($message);]]></find>
+        <action type="before-add"><![CDATA[					// BEGIN "Notify admin on registration MOD" - most of the code borrowed from phpBB, thank you
+					// Don't send e-mail if activation was sent, would only be duplicite
+					if ($config['require_activation'] != USER_ACTIVATION_ADMIN) 
+					{
+						// Grab an array of user_id's with a_user permissions ... these users can activate a user
+						$admin_ary = $auth->acl_get_list(false, 'a_user', false);
+						$admin_ary = (!empty($admin_ary[0]['a_user'])) ? $admin_ary[0]['a_user'] : array();
+
+						// Also include founders
+						$where_sql = ' WHERE user_type = ' . USER_FOUNDER;
+
+						if (sizeof($admin_ary))
+						{
+							$where_sql .= ' OR ' . $db->sql_in_set('user_id', $admin_ary);
+						}
+
+						$sql = 'SELECT user_id, username, user_email, user_lang, user_jabber, user_notify_type
+							FROM ' . USERS_TABLE . ' ' .
+							$where_sql;
+						$result = $db->sql_query($sql);
+						
+						while ($row = $db->sql_fetchrow($result))
+						{
+							$messenger->template('admin_notify_registered', $row['user_lang']);
+							$messenger->to($row['user_email'], $row['username']);
+							$messenger->im($row['user_jabber'], $row['username']);
+
+							$messenger->assign_vars(array(
+								'USERNAME'			=> htmlspecialchars_decode($data['username']),
+								'USER_MAIL'			=> $data['email'],
+								'USER_REGDATE'		=> date($config['default_dateformat'], $user_row['user_regdate']))
+							);
+
+							$messenger->send($row['user_notify_type']);
+						}
+						$db->sql_freeresult($result);										
+					}
+					// END "Notify admin on registration MOD"	]]></action>
+      </edit>
+    </open>
+  </action-group>
+</mod>

@@ -1,0 +1,241 @@
+* {
+MARGIN: 0px; 
+PADDING: 0px;
+BORDER: 0px;
+} 
+
+A {background: none; cursor: pointer;}
+
+
+.Global {
+WIDTH: 100%;
+HEIGHT: 100%;
+MARGIN-LEFT: 0 0 0  0px;
+BACKGROUND-COLOR: #000000;
+}
+
+
+.Header {
+WIDTH: 100%;
+PADDING: 0px;
+MARGIN: 7 0 0 0px; 
+}
+
+.Header TR {
+VERTICAL-ALIGN:middle;
+}
+
+.HeadingStyle {
+BACKGROUND: inherit;
+COLOR: #aac5da;
+FONT: 24px Arial,sans-serif;
+PADDING: 12 0 0 0px;
+MARGIN: 0px;
+BORDER: 0px;
+}
+
+.photo {
+WIDTH: 100%;
+BORDER-COLLAPSE:collapse;
+MARGIN: 0px;
+}
+
+
+
+.photo TD {
+VERTICAL-ALIGN:middle; 
+TEXT-ALIGN: center;
+WIDTH: 50%;
+}
+
+.photo IMG {
+border-width: 10px;
+border-style: solid;
+border-color: #ffffff;
+margin-bottom: 25px;
+}
+
+
+.NavBar {
+WIDTH: 100%;
+BORDER: 0 0 0 0;
+BORDER-COLLAPSE:collapse;
+MARGIN-TOP: 0px;
+}
+
+.NavBar TD {
+PADDING: 0px;
+VERTICAL-ALIGN:top;
+}
+
+.NavBarMenu {
+WIDTH:100%;
+FONT: bold 14px Arial;
+LETTER-SPACING: 2px;
+COLOR: #295c25;
+BORDER: 0 0 0 0;
+VERTICAL-ALIGN:top;
+}
+
+.NavBarMenu TD {
+BACKGROUND:none;
+TEXT-ALIGN:center;
+}
+
+.NavBarMenu A {
+FONT: bold 10px Verdana, Tahoma, san-serif;
+LETTER-SPACING: 0px;
+TEXT-DECORATION:none;
+}
+
+.NavBarMenu A:link {color: #36b62c;}
+.NavBarMenu A:visited {color: #36b62c;}
+.NavBarMenu A:hover {color: white;}
+.NavBarMenu A:active {color: #36b62c;}
+
+
+.ptxt {
+TEXT-ALIGN:justify;
+MARGIN-RIGHT:15px;
+FONT:13px arial,sans-serif;
+}
+
+.ptxt A:link {color: #2b9123;text-decoration: none;}
+.ptxt A:visited {color: #2b9123;text-decoration: none;}
+.ptxt A:hover {color: blue; text-decoration: underline;}
+.ptxt A:active {color: #2b9123;text-decoration: none;}
+
+
+
+.Left {
+width: 10px;
+}
+
+.Center{
+width: 100%;
+}
+
+.Content {
+BACKGROUND: #ffffff;
+COLOR: inherit;
+}
+
+.Right {
+width: 10px;
+}
+
+.BoxStyle {
+WIDTH: 100%;
+MARGIN-TOP: 15px;
+}
+
+.BoxStyle TD {
+BACKGROUND: #c2d7e2;
+COLOR: inherit;
+PADDING: 0px;
+TEXT-ALIGN: left;
+BORDER: 0px;
+}
+
+
+
+.SubStyle {
+BACKGROUND: inherit;
+COLOR: #404040;
+FONT: 16px Arial,sans-serif;
+FONT-WEIGHT: bold;
+}
+
+.SubStyle A:link {color: #295c25;text-decoration: none;}
+.SubStyle A:visited {color: #295c25;text-decoration: none;}
+.SubStyle A:hover {color: blue; text-decoration: underline;}
+.SubStyle A:active {color: #295c25;text-decoration: none;}
+
+
+.pl{min-width: 150px;}
+
+.pl A:link {color: #295c25;text-decoration: underline;}
+.pl A:visited {color: #295c25;text-decoration: underline;}
+.pl A:hover {color: blue; text-decoration: underline;}
+.pl A:active {color: #295c25;text-decoration: underline;}
+
+
+
+.rightbox {
+FONT: 12px arial,sans-serif;
+text-align: Center;
+VERTICAL-ALIGN: top;
+}
+
+
+.Padded {
+PADDING: 5px;
+}
+
+.SmallFont {
+FONT: 13px arial,sans-serif;
+}
+
+.MedFontBold {
+FONT: bold 15px arial,sans-serif;
+}
+
+.SmallFont TD {
+FONT: 13px arial,sans-serif;
+}
+
+.MedFontBold TD {
+FONT: bold 15px arial,sans-serif;
+}
+
+.Footer {
+WIDTH: 100%;
+HEIGHT: 25px;
+}
+
+.Footer TD {
+BACKGROUND: url("blueline-footer.gif") repeat;
+COLOR: #000000;
+FONT: 10px Arial,sans-serif;
+HEIGHT: 15px;
+VERTICAL-ALIGN: middle;
+TEXT-ALIGN: center;
+}
+
+.Footer A:link {color: #295c25;text-decoration: none;}
+.Footer A:visited {color: #295c25;text-decoration: none;}
+.Footer A:hover {color: blue; text-decoration: underline;}
+.Footer A:active {color: #295c25;text-decoration: none;}
+
+.ital {font-style:italic;}
+
+UL {
+FONT: 12px arial, sans-serif;
+PADDING-LEFT: 25px;
+}
+
+.quote {
+FONT: 12px arial, sans-serif;
+PADDING-LEFT: 25px;
+PADDING-RIGHT: 35px;
+TEXT-ALIGN:justify;
+}
+
+
+.botnav {
+WIDTH: 100%;
+MIN-HEIGHT: 15px;
+FONT: 10px Arial,sans-serif;
+FONT-WEIGHT: bold;
+TEXT-ALIGN:left;
+MARGIN-TOP: 3px;
+}
+
+.botnav A:link {color: #2b9123;text-decoration: none;}
+.botnav A:visited {color: #2b9123;text-decoration: none;}
+.botnav A:hover {color: blue; text-decoration: underline;}
+.botnav A:active {color: #2b9123;text-decoration: none;}
+
+
+
+

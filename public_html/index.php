@@ -1,0 +1,530 @@
+<?php 
+session_start();
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+
+
+
+
+<!-- 
+
+################################ DO NOT REMOVE ################################
+
+
+
+WEB TEMPLATE CREATED BY IRON SPIDER - http://www.ironspider.ca/
+
+COPYRIGHT © Robert Darrell 2008 - All rights reserved.
+
+
+
+THE DISTRIBUTION, SALE OR LEASE OF THIS WEB TEMPLATE
+
+AND/OR THE ASSOCIATED BACKGROUND IMAGES IS STRICTLY PROHIBITED.
+
+
+
+################################ DO NOT REMOVE ################################
+
+-->
+
+<title>Clear Mountain Zen Center</title>
+
+
+
+<meta name="keywords" content="zen, Buddhism, Montclair, zendo, zazen, meditation, Clear Mountain" />
+
+<meta name="description" content="The Clear Mountain Zen Center of Montclair, New Jersey" />
+
+<link rel="stylesheet" type="text/css" href="main.css">
+
+</head>
+
+<body>
+
+
+
+<?php
+
+$mono = date("m");
+$monoi = (int)$mono;
+
+$yrno = date("Y");
+$yrnoi = ((int)$yrno)*100;
+
+$dateix = $monoi + $yrnoi;
+
+$filename = "thismo.txt";
+$fil = fopen($filename,r);
+$dat = fread($fil, filesize($filename));
+fclose($fil);
+
+$filename2 = "modate.txt";
+$fil2 = fopen($filename2,r);
+$dat2 = fread($fil2, filesize($filename2));
+fclose($fil2);
+
+$filename3 = "lastmo.txt";
+$fil3 = fopen($filename3,r);
+$dat3 = fread($fil3, filesize($filename3));
+fclose($fil3);
+
+
+
+if( isset( $_SESSION["counter"] ) ) {
+$_SESSION["counter"] += 1;
+} else {
+
+$_SESSION["counter"] = 1;
+$fil = fopen($filename,w);
+
+if($dateix > $dat2)
+{
+
+$fil2 = fopen($filename2,w);
+fwrite($fil2, $dateix);
+fclose($fil2);
+$fil3 = fopen($filename3,w);
+fwrite($fil3, $dat);
+fclose($fil3);
+$dat=1;
+}
+else
+{
+$dat+=1;
+}
+
+fwrite($fil, $dat);
+fclose($fil);
+}
+
+?>
+
+
+
+<table class="Global">
+
+<!-- next is the big row that will hold the divs for navbar logo, second row for header div -->
+
+<tr><td colspan="3">
+
+
+<!-- ============ wrap div ============== -->
+
+<div id="wrap">
+
+
+<div id="CornerL"><img src="leftnav.gif"></div>
+
+
+
+<!-- ============ Navbar Menu  div ============== -->
+
+<div id="NavBarMenu">
+
+ 
+
+
+
+
+
+
+
+<ul>
+
+<li><a href="index.htm">home</a></li>
+
+
+
+
+
+<li><a href="aboutzen.htm">about Zen</a>
+
+<ul> 
+
+<li><a href="aboutzen.htm">Sangha Reflections</a></li>
+
+<li><a href="aboutzen2.htm">A Living Heritage</a></li>
+
+<li><a href="defs.htm">Word Glossary</a></li>
+
+
+
+</ul></li>
+
+
+
+<li><a href="aboutus.htm">about us</a>
+
+<ul> 
+
+<li><a href="aboutus.htm">Our Sangha</a></li>
+
+<li><a href="aboutus2.htm">Our Teachers</a></li>
+
+<li><a href="tribute.htm">In Memorium</a></li>
+
+<li><a href="photos.htm">Photos</a></li>
+
+</ul>
+
+
+
+
+
+
+
+</li>
+
+
+
+
+
+<li><a href="aboutprac.htm">about our practice</a></li>
+
+<li><a href="resources.htm">resources, audio</a>
+
+<ul>
+
+<li><a href="resources.htm">Chants</a></li>
+
+
+<li><a href="audio.htm">Audio Dharma Talks</a></li>
+
+
+<li><a href="links.htm">Links</a></li>
+
+
+</ul></li>
+
+
+
+<li><a href="sked.htm">events and directions</a>
+
+<ul> 
+
+<li><a href="sked.htm">Schedule, Directions</a></li>
+
+<li><a href="sked2.htm">Special Events</a></li>
+
+<li><a href="calendar.htm">Calendar</a></li>
+
+</ul></li>
+
+
+
+
+
+
+
+<li><a href="contact.htm">contact us</a></li>
+
+</ul>
+
+
+
+
+
+</div>
+
+
+
+<!-- ========= end of NavBarMenu ====== -->
+
+
+
+
+
+<div id="CornerR"><img src="rightnav.gif"></div>
+
+
+
+
+
+</div>
+
+
+
+<!-- ======= end of wrap div ===== -->
+
+</td></tr>
+
+
+
+
+
+<!--  ======== Header row ================ -->
+
+<tr><td colspan="3">
+
+
+
+
+
+
+
+<!-- ============ Header section  div ============== -->
+
+<div id="Header">
+
+
+
+<!-- ============ Logo controlled by css Header class ============== -->
+
+<a href="index.htm" title="Welcome!"><img src="Header.jpg"></a></div>
+
+
+
+<!-- === end of second big row in main table -->
+
+</td></tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ============ COLUMNS SECTION  3 col arrangement ============== -->
+
+
+
+<!-- ============ Left Column ============== -->
+
+<tr><td class="Left" width="25">
+
+
+
+
+
+
+
+
+
+
+
+</td>
+
+
+
+<!-- ============ Content Column (Middle) ============== -->
+
+<td class="Content Padded" width="76%" style="border-right: 2px dotted gray;">
+
+
+
+<!-- ============ Page Heading ============== -->
+
+<h1 class="HeadingStyle">Welcome to Clear Mountain</h1>
+
+
+
+<!-- ============ Begin Content ============== -->
+
+<br/>
+
+<p class="ptxt">AS OF LATE SEPTEMBER, 2021, THE CLEAR MOUNTAIN ZENDO HAS RE-OPENED ON SUNDAY MORNINGS FOR ZAZEN SITTING FROM 9:30 AM TO 11:30 AM. WE PRESENTLY USE A HYBRID FORMAT WHEREBY ZOOM CONTINUES FOR REMOTE PARTICIPATION, BUT MEMBERS OF CLEAR MOUNTAIN SANGHA AND PRE-ARRANGED VISITORS HAVE THE OPTION OF ATTENDING IN PERSON. WE REQUIRE THAT MASKS BE WORK AT ALL TIMES AT THE ZENDO AND WE RESERVE THE RIGHT TO LIMIT THE NUMBER OF SANGHA MEMBERS WHO CAN BE PRESENT IN THE ZENDO. WE ALSO RESERVE THE RIGHT TO INQUIRE AS TO VACCINATION STATUS FOR IN-PERSON ATTENDEES.</p><br/>
+
+<p class="ptxt"> IF INTERESTED IN JOINING US FOR OUR SUNDAY ZAZEN FROM 9:30 AM to 11:30 AM ON ZOOM, PLEASE E-MAIL BILL, OUR LEAD STUDENT TEACHER, at billnathan@juno.com</p><br/>
+
+<p class="ptxt">On behalf of the <a href="defs.htm#sangha" title="Zen community">sangha</a> of the Clear Mountain Zen Center of Montclair, New Jersey, let me welcome you to our web site.  We hope that you will find something of help and interest to your
+
+life's journey. I further hope that you will gain a sense of our practice and what we offer to the community of northern New Jersey.
+
+Our sangha includes a broad variety of individuals of many different talents, ages, experiences and backgrounds, but we all seek to 
+
+preserve and honor the great Zen traditions developed over centuries and millenium in the lands of the East.  We strive to present them  in ways most relevant to 
+
+our modern culture.<br/>&nbsp;</p>  
+
+<p class="ptxt">While faithfully hewing to the pathways tread by our elders in Zen and respecting the rigors they prescribed, we seek to offer a  place of peace, 
+
+healing, community and reconciliation to all who might benefit from a quiet, disciplined and yet ultimately humanistic approach to daily life and the pursuit of awareness.  Under the guidence of the
+
+<a href="http://www.whiteplum.org" target="_blank">White Plum Asanga</a> and our guilding teacher, <a href="http://en.wikipedia.org/wiki/Robert_Kennedy_%28roshi%29" target="_blank">Roshi Robert Jinsen Kennedy</a>, we offer beginners instruction, weekly Zazen on Sunday mornings, weekday quiet time, and other 
+
+ways of serving our community.  Thank you for your attention, and we welcome your comments or your visit.<br/>&nbsp;</p>
+
+<p class="ptxt" style="text-align:right;">Carl Genjo Bachmann, <a href="defs.htm#sensei" title="Zen teacher">Sensei</a></p>
+
+
+
+<!-- ============ End Content ============== -->
+
+
+
+<!-- ============ bottom site nav links, in a div box within TD ========== -->
+
+<div class="menu">
+
+
+
+<ul>
+
+              <li><a href="index.htm" >Home</a></li>   
+
+              <li><a href="aboutus2.htm" >Our Teachers</a></li>
+
+              <li><a href="audio.htm" >Audio Dharma Talks</a></li>
+
+              <li><a href="sked2.htm" >Special Events</a></li>
+
+     
+
+            </ul>
+
+
+
+<ul>
+
+              <li><a href="aboutzen2.htm" >Zen Heritage</a></li>  
+
+              <li><a href="aboutus.htm" >Our Sangha</a></li>
+
+              <li><a href="sked.htm" >Schedule, Directions</a></li>    
+
+              <li><a href="tribute.htm" >In Memorium</a></li>
+
+
+
+            </ul>
+
+
+
+<ul>
+
+              <li><a href="aboutzen.htm" >Sangha Reflections</a></li>
+
+              <li><a href="aboutprac.htm" >Our Practice</a></li>
+
+              <li><a href="resources.htm" >Chants</a></li>
+
+              <li><a href="defs.htm" >Word Glossary</a></li>
+
+
+
+            </ul>
+
+
+
+<ul>
+
+
+
+              <li><a href="contact.htm" >Contact Us</a></li>
+
+              <li><a href="photos.htm" >Photos</a></li>
+
+              <li><a href="calendar.htm" >Calendar</a></li>
+
+              <li><a href="https://www.facebook.com/ClearMountainZenCenterNJ/" target="_blank">FACEBOOK PAGE</a></li>
+
+
+
+            <!--  <li><a href="vw/index.php" >Discussion Forum</a></li> -->
+
+
+
+            </ul>
+<div style="margin-left:60px;margin-top:7px;">
+<!-- <a href="https://www.facebook.com/pages/Clear-Mountain-Zen-Center-Meditation-Studio/1428690717345223?sk=info&tab=home" target="_blank"> <img src="./pix/faceb.gif"></a> -->
+<a href="https://www.facebook.com/ClearMountainZenCenterNJ/" target="_blank"> <img src="./pix/faceb.gif"></a>
+
+</div>
+
+</div>
+
+<!-- ============= end bottom site nav link line ========= -->
+
+
+
+</td>
+
+
+
+<!-- ============ Right Column ============== -->
+
+<td class="Right rightbox">
+
+<img style="padding-top:10px;" src="./pix/SCarl_1.jpg" alt="Sensei Carl Bachmann">
+
+<br/><br/>
+
+Clear Mountain Zen Center<br>
+
+7 Oak Place<br>
+
+
+Montclair, NJ 07042
+
+<br/>&nbsp;
+
+<img src="bigo.jpg"><br>
+
+<img style="margin-top:10px;margin-bottom:5px;" src="pplogo.gif"><br>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+
+<input type="hidden" name="cmd" value="_s-xclick">
+
+<input type="hidden" name="hosted_button_id" value="4UB8XCWE98HN2">
+
+<input type="image" src="btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+
+<img alt="" border="0" src="pixel.gif" width="1" height="1">
+
+</form>
+
+<span style="font: 12px Times New Roman;">PLEASE NOTE: Donations to<br> Clear Mountain Zendo <br>are NOT tax-deductible.</span>
+
+
+
+
+
+
+
+</td></tr>
+
+
+
+<!-- ============ Footer ============== -->
+
+<tr><td colspan="3" height="25">
+
+
+
+<table class="Footer" cellpadding="0" cellspacing="0" border="0"><tr>
+
+<td style="background: none; width: 25px;"><img src="bottom-left.gif" width="25" height="25" alt="bottom-left (1K)"></td>
+
+<td>&copy; Clear Mountain Zen Center &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Design by <a href="http://www.ironspider.ca/freetemplates/index.htm" title="(External link - Opens in a new window.)" target="_blank">Iron Spider</a> &nbsp;&nbsp;&nbsp; Page session stats: &nbsp;<?php echo $dat; ?> 
+&nbsp; this month, and &nbsp;<?php  echo $dat3; ?>&nbsp; last month. 
+
+</td>
+
+<td style="background: none; width: 25px;"><img src="bottom-right.gif" width="25" height="25" alt="bottom-right (1K)"></td></tr></table>
+
+
+
+</td></tr></table>
+
+</body>
+
+
+
+</html>
+
+
+

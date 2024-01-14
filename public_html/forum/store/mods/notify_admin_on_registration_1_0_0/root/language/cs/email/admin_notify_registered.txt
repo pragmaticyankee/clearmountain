@@ -1,0 +1,12 @@
+Subject: Registroval se nový uživatel
+
+Na vašem fóru "{SITENAME}" se registroval nový uživatel.
+
+Údaje o uživateli:
+
+Uživatelské jméno:	{USERNAME}
+E-mail:				{USER_MAIL}
+Datum registrace:	{USER_REGDATE}
+
+
+{EMAIL_SIG}

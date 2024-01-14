@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "clearmountainzen.org Statistics"
+AuthUserFile /var/chroot/home/content/39/8191439/html/stats/.statspwd
+Require valid-user
+DirectoryIndex index.html
